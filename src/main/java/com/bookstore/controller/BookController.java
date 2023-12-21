@@ -70,9 +70,4 @@ public class BookController {
         System.out.println("success3");
         return "redirect:/my_books";
     }
-
-
-
-
-
 }
