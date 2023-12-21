@@ -70,4 +70,16 @@ public class BookController {
         System.out.println("success3");
         return "redirect:/my_books";
     }
+
+    @RequestMapping("/editBook/{id}")
+    public ModelAndView editBook(@PathVariable Long id){
+        Book b = bookService.getBookById(id);
+        return new ModelAndView("bookEdit", "book", b);
+    }
+
+    @RequestMapping("/deleteBook/{id}")
+    public String deleteBook(@PathVariable Long id){
+        bookService.deleteBookById(id);
+        return "redirect:/available_books";
+    }
 }
